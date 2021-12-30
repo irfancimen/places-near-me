@@ -47,3 +47,10 @@ This is just a initial implementation to be used as example exercising Spring bo
    [Docker]: <https://www.docker.com/>
    [Google Places API]: <https://developers.google.com/maps/documentation/places/web-service/overview/>
    [Mongo DB]: <https://www.mongodb.com/>
+ 
+## Some User Interface Screenshots
+![firstss](https://user-images.githubusercontent.com/20202301/147772124-728bb9e5-063b-4a3c-888c-06f87f4eba9c.JPG)
+
+![queryss](https://user-images.githubusercontent.com/20202301/147772134-ce824855-a089-432d-917f-c3a7fcc29588.JPG)
+
+![validationss](https://user-images.githubusercontent.com/20202301/147772142-29427b68-2800-4db6-803a-136dcd1fe29b.JPG)
