@@ -1,0 +1,46 @@
+<div class="row floating-panel">
+    <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+      <div class="form-group dis-flex">
+  
+        <div class="form-group">
+          <div class="dis-flex">
+            <label class="text" for="lat">Lat</label>
+            <input type="text" class="form-control" id="lat" formControlName="lat" required [ngClass]="{ 'is-invalid': submmited && f['lat'].errors }">
+            <div *ngIf="submmited && f['lat'].errors && f['lat'].errors['required']" class="invalid-tooltip">Latitude is required</div>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <div class="dis-flex">
+            <label class="text" for="lng">Lng</label>
+            <input type="text" class="form-control" id="lng" formControlName="lng" [ngClass]="{ 'is-invalid': submmited && f['lng'].errors }">
+            <div *ngIf="submmited && f['lng'].errors && f['lng'].errors['required']" class="invalid-tooltip">Longitude is required</div>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <div class="dis-flex">
+            <label class="text" for="radius">Radius</label>
+            <input type="number" class="form-control" id="radius" formControlName="radius" [ngClass]="{ 'is-invalid': submmited && f['radius'].errors }">
+            <div *ngIf="submmited && f['radius'].errors && f['radius'].errors['required']" class="invalid-tooltip">Radius is required</div>
+          </div>
+        </div>
+  
+        <button type="submit" class="btn btn-success ml-5" [disabled]="false">Search</button>
+  
+      </div>
+    </form>
+  </div>
+  
+  <div class="map-container">
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" >
+      <agm-marker *ngIf="!isLoading" [latitude]="lat" [longitude]="lng"></agm-marker>
+      <div *ngIf="isLoading">
+        <agm-marker *ngFor="let marker of markers" [latitude]="marker.geometry?.location.lat" [longitude]="marker.geometry?.location.lng">
+          <agm-info-window [disableAutoPan]="true">
+            {{marker.name}} <strong class="text"> Rating: {{marker.rating}}</strong>
+          </agm-info-window>
+        </agm-marker>
+    </div>
+    </agm-map>
+  </div>

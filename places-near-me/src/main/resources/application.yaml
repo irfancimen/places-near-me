@@ -1,0 +1,13 @@
+server:
+  port: 8070
+
+spring:
+  data:
+    mongodb:
+      database: pnm_db
+      port: 27017
+api:
+  version: 'api/v1'
+
+geo-map:
+  api-key: 'AIzaSyCQKoa1uf_1zPdGYHyoAlcFeJZmdN04pKA'
